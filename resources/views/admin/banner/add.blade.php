@@ -1,0 +1,81 @@
+<?php
+use App\Models\Banner;
+?>
+@extends('layouts.admin')
+
+
+@section('content')
+
+ <div class="animated fadeIn">
+
+
+                <div class="row">
+                   
+
+                    </div><!--/.col-->
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><strong>Banner</strong><small> Form</small></div>
+                            <div class="card-body card-block">
+                             <form method="post" action="{{route('admin.banner.add')}}" enctype="multipart/form-data">
+                                @csrf 
+                                
+                                
+                                <div class="form-group">
+                                <label for="company" class=" form-control-label">Title</label>
+                                <input type="text" value="{{old('title')}}" name="title" placeholder="Enter Title" class="form-control">
+                                <span class="help-block is-invalid">{{$errors->first('title')}}</span>
+                                </div>
+                                
+                                
+                                     <div class=" form-group">
+                                       <label for="select" class=" form-control-label">Select</label> 
+                                        
+                                            <select name="type_id" id="select" class="form-control">
+                                                <option value="">Please select</option>
+                                               
+                                                @foreach(Banner::getTypes() as $key=>$type)
+                                                <option value="{{$key}}" {{(old('type_id')==="$key")?'selected':''}}>{{$type}}</option>
+                                             
+                                                @endforeach
+                                            </select>
+                                            <span class="help-block is-invalid">{{$errors->first('type_id')}}</span>
+                                   
+                                    </div>
+                                    
+                                    
+                               
+                                  <div class=" form-group">
+                                        <label for="textarea-input" class=" form-control-label">Description</label> 
+                                        <div ><textarea name="description" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                                        
+                                        <span class="help-block is-invalid">{{$errors->first('description')}}</span>
+                                        
+                                    </div>
+                                    
+                              <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">Banner Image</label>
+                                   
+                                        </div>
+                                        <div class="col-12 col-md-9"><input name="banner_image" type="file" id="file-input" name="file-input" class="form-control-file">
+                                             
+                                        <span class="help-block is-invalid">{{$errors->first('banner_image')}}</span>
+                                        
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-actions form-group">
+                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                </div>  
+                                
+                                </form>     
+                                    
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    </div>
+ @endsection

@@ -15,14 +15,41 @@ Route::get('/', function () {
     return view('home');
 })->name('frontend.home');
 
+// routing for admin
 
-//routing for admin 
+
 Route::namespace('Admin')->prefix("admin")->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
-    Route::get('hello', function () {
-        return view('home');
+    Route::get('login', function () {
+        return view('admin.login');
+    })->name('admin.login');
+
+    Route::post('login', 'AuthController@login')->name('admin.login.post');
+    
+    Route::middleware("is_admin")->group(function(){
+        
+        Route::get('dashboard', function () {
+            return view('admin.main.dashboard');
+        })->name('admin.dashboard');
+        
+        
+        
+        Route::get('banner/add', function () {
+            return view('admin.banner.index');
+        })->name('admin.banner');
+        
+        Route::get('banner/add', function () {
+            return view('admin.banner.add');
+        })->name('admin.banner.add');
+        
+        
+        Route::post('banner/add', 'SectionController@storeBanner')->name('admin.banner.add');
+        
     });
+ 
+    
+    
 });
     
  
