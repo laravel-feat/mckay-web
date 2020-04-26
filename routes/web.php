@@ -60,10 +60,30 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         // homepage section manage
 
         Route::get('homepage/section-one', function () {
-            return view('admin.homepage.sectionOne')->with('model',Page::where('type_id',Page::TYPE_HOMEPAGE)->first());
+            return view('admin.homepage.sectionOne')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_ONE)->first());
         })->name('admin.homepage.sectionOne');
 
         Route::post('homepage/section-one', 'PageController@storeHomepageSectionOne')->name('admin.homepage.sectionOne.post');
+        
+        
+        Route::get('homepage/section-three', function () {
+            return view('admin.homepage.sectionThree')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_THREE)->first());
+        })->name('admin.homepage.sectionThree');
+        
+        Route::post('homepage/section-three', 'PageController@storeHomepageSectionThree')->name('admin.homepage.sectionThree.post');
+        
+        
+        
+        
+        Route::get('homepage/section-four', function () {
+            return view('admin.homepage.sectionFour')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_FOUR)->first());
+        })->name('admin.homepage.sectionFour');
+        
+        Route::post('homepage/section-four', 'PageController@storeHomepageSectionFour')->name('admin.homepage.sectionFour.post');
+        
+        
+        
+        
     });
 });
     
