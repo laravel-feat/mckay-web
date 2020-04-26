@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\BaseModel;
 
-class Banner extends Model
+class Banner extends BaseModel
 {
     
     const TYPE_HOMEPAGE=0 ; 
@@ -20,5 +21,11 @@ class Banner extends Model
             self::TYPE_SERVICES=>'Services'
             
         ];
+    }
+    
+    public function getType() 
+    {
+        $types=self::getTypes();
+        return isset($types[$this->type_id])?$types[$this->type_id]:'Not Defined';
     }
 }

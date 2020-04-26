@@ -16,9 +16,9 @@ use App\Models\Banner;
 
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header"><strong>Banner</strong><small> Form</small></div>
+                            <div class="card-header"><strong>Service</strong><small> Form</small></div>
                             <div class="card-body card-block">
-                             @include('admin.banner._form',['path'=>route('admin.banner.add')]) 
+                             @include('admin.service._form',['path'=>route('admin.service.add')]) 
                                     
                             </div>
                         </div>
@@ -27,4 +27,7 @@ use App\Models\Banner;
                     </div>
                     
                     </div>
+                    
+  
  @endsection
+ 

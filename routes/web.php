@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Models\Page;
 
 /*
  * |--------------------------------------------------------------------------
@@ -17,7 +18,6 @@ Route::get('/', function () {
 
 // routing for admin
 
-
 Route::namespace('Admin')->prefix("admin")->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
@@ -26,30 +26,45 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
     })->name('admin.login');
 
     Route::post('login', 'AuthController@login')->name('admin.login.post');
-    
-    Route::middleware("is_admin")->group(function(){
-        
+
+    Route::middleware("is_admin")->group(function () {
+
         Route::get('dashboard', function () {
             return view('admin.main.dashboard');
         })->name('admin.dashboard');
-        
-        
-        
-        Route::get('banner/add', function () {
-            return view('admin.banner.index');
-        })->name('admin.banner');
-        
+
+        Route::get('banner', 'BannerController@banner')->name('admin.banner');
+
         Route::get('banner/add', function () {
             return view('admin.banner.add');
         })->name('admin.banner.add');
-        
-        
-        Route::post('banner/add', 'SectionController@storeBanner')->name('admin.banner.add');
-        
+
+        Route::post('banner/add', 'BannerController@storeBanner')->name('admin.banner.add.post');
+
+        Route::get('banner/update/{model}', 'BannerController@updateBanner')->name('admin.banner.update');
+
+        Route::post('banner/update/{model}', 'BannerController@doUpdateBanner')->name('admin.banner.update.post');
+
+        Route::get('service', 'ServiceController@index')->name('admin.service');
+
+        Route::get('service/add', function () {
+            return view('admin.service.add');
+        })->name('admin.service.add');
+
+        Route::post('service/add', 'ServiceController@storeService')->name('admin.service.add.post');
+
+        Route::get('service/update/{model}', 'ServiceController@updateBanner')->name('admin.service.update');
+
+        Route::post('service/update/{model}', 'ServiceController@doUpdateBanner')->name('admin.service.update.post');
+
+        // homepage section manage
+
+        Route::get('homepage/section-one', function () {
+            return view('admin.homepage.sectionOne')->with('model',Page::where('type_id',Page::TYPE_HOMEPAGE)->first());
+        })->name('admin.homepage.sectionOne');
+
+        Route::post('homepage/section-one', 'PageController@storeHomepageSectionOne')->name('admin.homepage.sectionOne.post');
     });
- 
-    
-    
 });
     
  
