@@ -100,19 +100,13 @@ class PageController extends Controller
 
         return redirect()->back()->withSuccess("Section Three Updated Successfuly!!!");
     }
-    
-    
-    
-    
+
     public function storeHomepageSectionFour(Request $request)
     {
         $subsection = ($request->get('subsection'));
-        
-      
-        
-    
+
         $meta = ($request->get('meta'));
-        
+
         $finalData = [
             'meta' => $meta,
             'subsection' => $subsection
@@ -125,14 +119,114 @@ class PageController extends Controller
         if (empty($model)) {
             $model = new Page();
             $model->type_id = Page::TYPE_HOMEPAGE;
-        }  
-        $model->section_index=Page::SECTION_INDEX_FOUR;
-       
+        }
+        $model->section_index = Page::SECTION_INDEX_FOUR;
+
         $model->meta_data = json_encode($finalData);
         $model->created_by = Auth::user()->id;
         $model->save();
-        
+
         return redirect()->back()->withSuccess("Section Four Updated Successfuly!!!");
+    }
+
+    public function storeAboutUsSection(Request $request, $section_index)
+    {
+        $model = Page::where([
+            'type_id' => Page::TYPE_ABOUT_US
+        ])->where([
+            'section_index' => $section_index
+        ])->first();
+
+        if(empty($model))
+        {
+            $model = new Page();
+            $model->type_id = Page::TYPE_ABOUT_US;
+            
+        }
+        
+      
+        $model->section_index = $section_index;
+        $model->html=$request->get("html");
+        $model->created_by = Auth::user()->id;
+        
+        $model->save();
+        
+        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
+    }
+    
+    public function aboutUsSection($section_index)
+    {
+        $page=Page::where(['section_index'=>$section_index])->where(['type_id'=>Page::TYPE_ABOUT_US])->first();
+        return view('admin.about-us.section')->with(compact('section_index','page'));
+    }
+    
+    
+    
+    public function storeTeamSection(Request $request, $section_index)
+    {
+        $model = Page::where([
+            'type_id' => Page::TYPE_TEAM
+        ])->where([
+            'section_index' => $section_index
+        ])->first();
+        
+        if(empty($model))
+        {
+            $model = new Page();
+            $model->type_id = Page::TYPE_TEAM;
+            
+        }
+        
+        
+        $model->section_index = $section_index;
+        $model->html=$request->get("html");
+        $model->created_by = Auth::user()->id;
+        
+        $model->save();
+        
+        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
+    }
+    
+    public function teamSection($section_index)
+    {
+        $page=Page::where(['section_index'=>$section_index])->where(['type_id'=>Page::TYPE_TEAM])->first();
+        return view('admin.team.section')->with(compact('section_index','page'));
+    }
+    
+    
+    
+    
+    public function storeContactUsSection(Request $request, $section_index)
+    {
+        $model = Page::where([
+            'type_id' => Page::TYPE_CONTACT_US
+        ])->where([
+            'section_index' => $section_index
+        ])->first();
+        
+        if(empty($model))
+        {
+            $model = new Page();
+            $model->type_id = Page::TYPE_CONTACT_US;
+            
+        }
+        
+        
+        $model->section_index = $section_index;
+        $model->html=$request->get("html");
+        $model->created_by = Auth::user()->id;
+        
+        $model->save();
+        
+        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
+    }
+    
+    
+    public function contactUsSection($section_index)
+    {
+        
+        
+        
     }
     
     

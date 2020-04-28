@@ -60,30 +60,74 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         // homepage section manage
 
         Route::get('homepage/section-one', function () {
-            return view('admin.homepage.sectionOne')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_ONE)->first());
+            return view('admin.homepage.sectionOne')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_ONE)
+                ->first());
         })->name('admin.homepage.sectionOne');
 
         Route::post('homepage/section-one', 'PageController@storeHomepageSectionOne')->name('admin.homepage.sectionOne.post');
-        
-        
+
         Route::get('homepage/section-three', function () {
-            return view('admin.homepage.sectionThree')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_THREE)->first());
+            return view('admin.homepage.sectionThree')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_THREE)
+                ->first());
         })->name('admin.homepage.sectionThree');
-        
+
         Route::post('homepage/section-three', 'PageController@storeHomepageSectionThree')->name('admin.homepage.sectionThree.post');
-        
-        
-        
-        
+
         Route::get('homepage/section-four', function () {
-            return view('admin.homepage.sectionFour')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index',Page::SECTION_INDEX_FOUR)->first());
+            return view('admin.homepage.sectionFour')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_FOUR)
+                ->first());
         })->name('admin.homepage.sectionFour');
-        
+
         Route::post('homepage/section-four', 'PageController@storeHomepageSectionFour')->name('admin.homepage.sectionFour.post');
+
+   
+
+        Route::post('about-us/section/{section_index}', 'PageController@storeAboutUsSection')->where([
+            'section_index' => '[1-4]',
+          
+        ])->name('admin.aboutUs.section.post');
+
+        
+        Route::get('about-us/section/{section_index}', 'PageController@aboutUsSection')->where([
+            'section_index' => '[1-4]',
+            
+        ])->name('admin.aboutUs.section.post');
+        
+        
+        
+        Route::post('team/section/{section_index}', 'PageController@storeTeamSection')->where([
+            'section_index' => '[1-1]',
+            
+        ])->name('admin.team.section.post');
+        
+        
+        Route::get('team/section/{section_index}', 'PageController@teamSection')->where([
+            'section_index' => '[1-1]',
+            
+        ])->name('admin.team.section.post');
         
         
         
         
+        
+        
+        
+        Route::post('contact-us/section/{section_index}', 'PageController@storeContactUsSection')->where([
+            'section_index' => '[1-1]',
+            
+        ])->name('admin.contactUs.section.post');
+        
+        
+        Route::get('contact-us/section/{section_index}', 'PageController@contactUsSection')->where([
+            'section_index' => '[1-1]',
+            
+        ])->name('admin.contact-us.section.post');
+        
+        
+        
+        
+        
+        Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
     });
 });
     

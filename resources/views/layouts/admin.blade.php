@@ -344,6 +344,6 @@
 	<script src="{{asset('public/backend/js/jquery.matchHeight.min.js')}}"></script>
 	
 	<script src="{{asset('public/backend/js/main.js')}}"></script>
-
+@yield('additional_scripts')
 </body>
 </html>

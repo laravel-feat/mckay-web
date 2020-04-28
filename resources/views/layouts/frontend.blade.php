@@ -627,31 +627,31 @@ button:focus, .menu-toggle:hover, button:hover, .ast-button:hover,
 	href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2Ci%2C600%2C600i%2C700%2C700i%2C&#038;display=fallback&#038;ver=2.3.4'
 	media='all' />
 <link rel='stylesheet' id='astra-menu-animation-css'
-	href='http://mckay.neuronsit.in/wp-content/themes/astra/assets/css/minified/menu-animation.min.css?ver=2.3.4'
+	href='{{asset('/public/css/menu-animation.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='wp-block-library-css'
-	href='http://mckay.neuronsit.in/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2'
+	href='{{asset('/public/css/style.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='contact-form-7-css'
-	href='http://mckay.neuronsit.in/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.7'
+	href='{{asset('/public/css/styles.css')}}'
 	media='all' />
 <link rel='stylesheet' id='astra-contact-form-7-css'
-	href='http://mckay.neuronsit.in/wp-content/themes/astra/assets/css/minified/compatibility/contact-form-7.min.css?ver=2.3.4'
+	href='{{asset('/public/css/contact-form-7.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='elementor-icons-css'
-	href='http://mckay.neuronsit.in/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.6.2'
+	href='{{asset('/public/css/elementor-icons.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='elementor-animations-css'
-	href='http://mckay.neuronsit.in/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.9.7'
+	href='{{asset('/public/css/animations.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='elementor-frontend-css'
-	href='http://mckay.neuronsit.in/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.9.7'
+	href='{{asset('/public/css/frontend.min.css')}}'
 	media='all' />
 <link rel='stylesheet' id='elementor-global-css'
-	href='http://mckay.neuronsit.in/wp-content/uploads/elementor/css/global.css?ver=1585156204'
+	href='{{asset('/public/css/global.css')}}'
 	media='all' />
 <link rel='stylesheet' id='elementor-post-8-css'
-	href='http://mckay.neuronsit.in/wp-content/uploads/elementor/css/post-8.css?ver=1586606528'
+	href='{{asset('/public/css/post-8.css')}}'
 	media='all' />
 <link rel='stylesheet' id='google-fonts-1-css'
 	href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.3.2'

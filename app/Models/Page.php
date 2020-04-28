@@ -9,6 +9,10 @@ class Page extends Model
     const TYPE_HOMEPAGE = 0;
 
     const TYPE_ABOUT_US = 1;
+    
+    const TYPE_TEAM =2 ;
+    
+    const TYPE_CONTACT_US=3;
 
     const SECTION_INDEX_ONE = 1;
 
