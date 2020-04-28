@@ -6,7 +6,7 @@
 
  
 
-CKEDITOR.config.contentsCss = ["{{asset('public/css/style.css')}}" ,"{{asset('public/css/frontend.min.css')}}","{{asset('public/css/global.css')}}","{{asset('public/css/global.css')}}","{{asset('public/css/global.css')}}"];
+CKEDITOR.config.contentsCss = ["{{asset('public/css/post-8.css')}}","{{asset('public/css/style.css')}}" ,"{{asset('public/css/frontend.min.css')}}","{{asset('public/css/global.css')}}","{{asset('public/css/global.css')}}","{{asset('public/css/global.css')}}","{{asset('public/css/post-8.css')}}"];
  
 CKEDITOR.config.allowedContent = true;
 CKEDITOR.config.protectedSource.push(/<i[^>]*><\/i>/g);

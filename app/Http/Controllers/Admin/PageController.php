@@ -5,130 +5,77 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Page;
+use App\Models\Setting;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
 
-    public function manage()
+    
+    public function storeServicesSection(Request $request, $section_index)
     {
-        return view('admin.homepage.sectionOne');
+        $model = Page::where([
+            'type_id' => Page::TYPE_SERVICES
+        ])->where([
+            'section_index' => $section_index
+        ])->first();
+        
+        if(empty($model))
+        {
+            $model = new Page();
+            $model->type_id = Page::TYPE_SERVICES;
+            
+        }
+        
+        
+        $model->section_index = $section_index;
+        $model->html=$request->get("html");
+        $model->created_by = Auth::user()->id;
+        
+        $model->save();
+        
+        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
     }
-
-    public function storeHomepageSectionOne(Request $request)
+    
+    public function servicesSection($section_index)
     {
-        $subsection = ($request->get('subsection'));
-
-        $allRequest = $request->all();
-
-        if (! empty($allRequest['subsection']))
-            foreach ($allRequest['subsection'] as $key => $data) {
-
-                if (isset($data['image']) && ! empty($data['image'])) {
-                    $imageName = uniqid() . "_" . time() . '.' . $data['image']->getClientOriginalExtension();
-
-                    $data['image']->move(public_path('uploads'), $imageName);
-
-                    $subsection[$key]['image_path'] = $imageName;
-                }
-            }
-        $meta = ($request->get('meta'));
-
-        $finalData = [
-            'meta' => $meta,
-            'subsection' => $subsection
-        ];
+        $page=Page::where(['section_index'=>$section_index])->where(['type_id'=>Page::TYPE_SERVICES])->first();
+        return view('admin.services.section')->with(compact('section_index','page'));
+    }
+    
+    public function storeHomepageSection(Request $request, $section_index)
+    {
         $model = Page::where([
             'type_id' => Page::TYPE_HOMEPAGE
         ])->where([
-            'section_index' => Page::SECTION_INDEX_ONE
+            'section_index' => $section_index
         ])->first();
-        if (empty($model)) {
+        
+        if(empty($model))
+        {
             $model = new Page();
             $model->type_id = Page::TYPE_HOMEPAGE;
-        } else {
-            $savedData = $model->getMetaData();
-            if (! empty($savedData['subsection']) && ! empty($finalData['subsection'])) {
-                $images = collect($savedData['subsection'])->pluck("image_path");
-                foreach ($finalData['subsection'] as $key => $data) {
-                    if (empty($data['image_path']) && ! empty($images[$key])) {
-                        $finalData['subsection'][$key]['image_path'] = $images[$key];
-                    }
-                }
-            }
+            
         }
-        $model->section_index = Page::SECTION_INDEX_ONE;
-        $model->meta_data = json_encode($finalData);
+        
+        
+        $model->section_index = $section_index;
+        $model->html=$request->get("html");
         $model->created_by = Auth::user()->id;
+        
         $model->save();
-
-        return redirect()->back()->withSuccess("Section One Updated Successfuly!!!");
+        
+        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
     }
-
-    public function storeHomepageSectionThree(Request $request)
+    
+    public function homepageSection($section_index)
     {
-        $meta = ($request->get('meta'));
-
-        if ($request->hasFile('meta.main_image')) {
-            $imageName = uniqid() . "_" . time() . '.' . $request->file('meta.main_image')->getClientOriginalExtension();
-
-            $request->file('meta.main_image')->move(public_path('uploads'), $imageName);
-            $meta['main_image'] = $imageName;
-        }
-        $finalData = [
-            'meta' => $meta
-        ];
-        $model = Page::where([
-            'type_id' => Page::TYPE_HOMEPAGE
-        ])->where([
-            'section_index' => Page::SECTION_INDEX_THREE
-        ])->first();
-        if (empty($model)) {
-            $model = new Page();
-            $model->type_id = Page::TYPE_HOMEPAGE;
-        } else {
-            $savedData = $model->getMetaData();
-            if (@! empty($savedData['meta']['main_image']) && @empty($finalData['meta']['main_image'])) {
-                $finalData['meta']['main_image'] = $savedData['meta']['main_image'];
-            }
-        }
-        $model->section_index = Page::SECTION_INDEX_THREE;
-        $model->meta_data = json_encode($finalData);
-        $model->created_by = Auth::user()->id;
-        $model->save();
-
-        return redirect()->back()->withSuccess("Section Three Updated Successfuly!!!");
+        $page=Page::where(['section_index'=>$section_index])->where(['type_id'=>Page::TYPE_HOMEPAGE])->first();
+        return view('admin.homepage.section')->with(compact('section_index','page'));
     }
-
-    public function storeHomepageSectionFour(Request $request)
-    {
-        $subsection = ($request->get('subsection'));
-
-        $meta = ($request->get('meta'));
-
-        $finalData = [
-            'meta' => $meta,
-            'subsection' => $subsection
-        ];
-        $model = Page::where([
-            'type_id' => Page::TYPE_HOMEPAGE
-        ])->where([
-            'section_index' => Page::SECTION_INDEX_FOUR
-        ])->first();
-        if (empty($model)) {
-            $model = new Page();
-            $model->type_id = Page::TYPE_HOMEPAGE;
-        }
-        $model->section_index = Page::SECTION_INDEX_FOUR;
-
-        $model->meta_data = json_encode($finalData);
-        $model->created_by = Auth::user()->id;
-        $model->save();
-
-        return redirect()->back()->withSuccess("Section Four Updated Successfuly!!!");
-    }
-
+    
+    
     public function storeAboutUsSection(Request $request, $section_index)
     {
         $model = Page::where([
@@ -218,7 +165,7 @@ class PageController extends Controller
         
         $model->save();
         
-        return redirect()->back()->withSuccess("Section $section_index Updated Successfuly!!!");
+        return redirect()->back()->withSuccess(__("Section :section_index Updated Successfuly!!!",['section_index'=>$section_index]));
     }
     
     
@@ -227,6 +174,52 @@ class PageController extends Controller
         
         
         
+    }
+    
+    public function storeOtherInformation (Request $request)
+    {
+        $model= Setting::first();
+        if(empty($model))
+        {
+            $model= new Setting();
+        }
+        $request->validate([
+            'office_address' => 'required',
+            'contact_number' => 'required',
+            'contact_email' => 'required|email',
+            'facebook_page_link'=>'required|url',
+            'twitter_page_link'=>'required|url',
+            'instagram_page_link'=>'required|url',
+            
+            'footer_copyright_text'  => 'required'
+            
+        ]);
+        $data=$request->except('_token');
+        
+        if ($request->hasFile('site_logo')) {
+            $imageName = time() . '.' . $request->site_logo->getClientOriginalExtension();
+            
+            $request->site_logo->move(public_path('uploads'), $imageName);
+            
+            $data['site_logo']=$imageName;
+        }
+        
+       
+        $model->fill($data);
+        $model->save();
+        
+        
+        return redirect()->back()->withSuccess(__('messages.setting_updated'));
+        
+        
+        
+        
+    }
+    
+    public function otherInformation() 
+    {
+        $model=Setting::first();
+        return view('admin.other.otherInformation')->with(['model'=>$model]);
     }
     
     

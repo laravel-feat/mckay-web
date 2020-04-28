@@ -12,9 +12,14 @@ use App\Models\Page;
  * | contains the "web" middleware group. Now create something great!
  * |
  */
-Route::get('/', function () {
-    return view('home');
-})->name('frontend.home');
+Route::middleware("frontend_basic")->group(function (){
+    
+    Route::get('/',"HomeController@index")->name('frontend.home');
+    
+    Route::get('/services',"HomeController@services")->name('frontend.services');
+    
+    
+});
 
 // routing for admin
 
@@ -45,42 +50,43 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
 
         Route::post('banner/update/{model}', 'BannerController@doUpdateBanner')->name('admin.banner.update.post');
 
-        Route::get('service', 'ServiceController@index')->name('admin.service');
-
-        Route::get('service/add', function () {
-            return view('admin.service.add');
-        })->name('admin.service.add');
-
-        Route::post('service/add', 'ServiceController@storeService')->name('admin.service.add.post');
-
-        Route::get('service/update/{model}', 'ServiceController@updateBanner')->name('admin.service.update');
-
-        Route::post('service/update/{model}', 'ServiceController@doUpdateBanner')->name('admin.service.update.post');
-
-        // homepage section manage
-
-        Route::get('homepage/section-one', function () {
-            return view('admin.homepage.sectionOne')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_ONE)
-                ->first());
-        })->name('admin.homepage.sectionOne');
-
-        Route::post('homepage/section-one', 'PageController@storeHomepageSectionOne')->name('admin.homepage.sectionOne.post');
-
-        Route::get('homepage/section-three', function () {
-            return view('admin.homepage.sectionThree')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_THREE)
-                ->first());
-        })->name('admin.homepage.sectionThree');
-
-        Route::post('homepage/section-three', 'PageController@storeHomepageSectionThree')->name('admin.homepage.sectionThree.post');
-
-        Route::get('homepage/section-four', function () {
-            return view('admin.homepage.sectionFour')->with('model', Page::where('type_id', Page::TYPE_HOMEPAGE)->where('section_index', Page::SECTION_INDEX_FOUR)
-                ->first());
-        })->name('admin.homepage.sectionFour');
-
-        Route::post('homepage/section-four', 'PageController@storeHomepageSectionFour')->name('admin.homepage.sectionFour.post');
-
-   
+        
+        
+        
+        
+        
+        Route::post('homepage/section/{section_index}', 'PageController@storeHomepageSection')->where([
+            'section_index' => '[1-4]',
+            
+        ])->name('admin.homepage.section.post');
+        
+        
+        Route::get('homepage/section/{section_index}', 'PageController@HomepageSection')->where([
+            'section_index' => '[1-4]',
+            
+        ])->name('admin.homepage.section');
+        
+        
+  
+        
+        
+        
+        Route::post('services/section/{section_index}', 'PageController@storeServicesSection')->where([
+            'section_index' => '[1]',
+            
+        ])->name('admin.services.section.post');
+        
+        
+        Route::get('services/section/{section_index}', 'PageController@ServicesSection')->where([
+            'section_index' => '[1]',
+            
+        ])->name('admin.services.section');
+        
+        
+        
+        
+        
+        
 
         Route::post('about-us/section/{section_index}', 'PageController@storeAboutUsSection')->where([
             'section_index' => '[1-4]',
@@ -91,7 +97,7 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         Route::get('about-us/section/{section_index}', 'PageController@aboutUsSection')->where([
             'section_index' => '[1-4]',
             
-        ])->name('admin.aboutUs.section.post');
+        ])->name('admin.aboutUs.section');
         
         
         
@@ -104,11 +110,10 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         Route::get('team/section/{section_index}', 'PageController@teamSection')->where([
             'section_index' => '[1-1]',
             
-        ])->name('admin.team.section.post');
+        ])->name('admin.team.section');
         
         
-        
-        
+     
         
         
         
@@ -122,6 +127,17 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
             'section_index' => '[1-1]',
             
         ])->name('admin.contact-us.section.post');
+        
+        
+        
+        
+        
+        
+        Route::post('other/other-information', 'PageController@storeOtherInformation')->name('admin.other.otherInformation.post');
+        
+        
+        Route::get('other/other-information', 'PageController@otherInformation')->name('admin.other.otherInformation');
+        
         
         
         

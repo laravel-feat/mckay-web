@@ -835,12 +835,11 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 									itemtype="https://schema.org/Organization"
 									itemscope="itemscope">
 									<span class="site-logo-img"><a
-										href="http://mckay.neuronsit.in/" class="custom-logo-link"
+										href="{{route('frontend.home')}}" class="custom-logo-link"
 										rel="home"><img width="387" height="162"
-											src="http://mckay.neuronsit.in/wp-content/uploads/2020/04/cropped-logo-1-387x162.png"
+											src="{{$setting->getLogoUrl()}}"
 											class="custom-logo" alt=""
-											srcset="http://mckay.neuronsit.in/wp-content/uploads/2020/04/cropped-logo-1-387x162.png 387w, http://mckay.neuronsit.in/wp-content/uploads/2020/04/cropped-logo-1-300x126.png 300w, http://mckay.neuronsit.in/wp-content/uploads/2020/04/cropped-logo-1.png 600w"
-											sizes="(max-width: 387px) 100vw, 387px" /></a></span>
+											 /></a></span>
 									<div class="ast-site-title-wrap">
 										<h1 class="site-title" itemprop="name">
 											<a href="http://mckay.neuronsit.in/" rel="home"
@@ -877,19 +876,19 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 												class="main-header-menu ast-nav-menu ast-flex ast-justify-content-flex-end  submenu-with-border astra-menu-animation-fade ">
 												<li id="menu-item-23"
 													class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-23"><a
-													href="http://mckay.neuronsit.in/" aria-current="page">Home</a></li>
+													href="{{route('frontend.home')}}" aria-current="page">{{__('Home')}}</a></li>
 												<li id="menu-item-36"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a
-													href="http://mckay.neuronsit.in/services">Our Services</a></li>
+													href="{{route('frontend.services')}}">{{__('Our Services')}}</a></li>
 												<li id="menu-item-42"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a
-													href="http://mckay.neuronsit.in/aboutus">About us</a></li>
+													href="http://mckay.neuronsit.in/aboutus">{{__('About us')}}</a></li>
 												<li id="menu-item-37"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a
-													href="http://mckay.neuronsit.in/team/">Team</a></li>
+													href="http://mckay.neuronsit.in/team/">{{__('Team')}}</a></li>
 												<li id="menu-item-41"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a
-													href="http://mckay.neuronsit.in/contactus">Contact</a></li>
+													href="http://mckay.neuronsit.in/contactus">{{__('Contact')}}</a></li>
 												<li id="menu-item-137"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-137"><a
 													href="#">Eng</a>
@@ -985,7 +984,7 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 							</div>
 
 							<div class="ast-small-footer-section ast-small-footer-section-2">
-								Copyright ©Mckay. All Rights Reserved</div>
+								{{$setting->footer_copyright_text}}</div>
 
 						</div>
 						<!-- .ast-row .ast-small-footer-wrap -->
@@ -1004,18 +1003,8 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 	</div>
 	<!-- #page -->
 
-
-	<link rel='stylesheet' id='mg_wpsi_icons-css'
-		href='http://mckay.neuronsit.in/wp-content/plugins/wp-social-icons/assets/icons/style.css?ver=1.0'
-		media='all' />
-	<script>
-var astra = {"break_point":"921","isRtl":""};
-</script>
-	<script
-		src='http://mckay.neuronsit.in/wp-content/themes/astra/assets/js/minified/style.min.js?ver=2.3.4'></script>
-	<script>
-var wpcf7 = {"apiSettings":{"root":"http:\/\/mckay.neuronsit.in\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
-</script>
+ 
+ 
 	<script
 		src='http://mckay.neuronsit.in/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.7'></script>
 	<script

@@ -8,17 +8,17 @@ use App\BaseModel;
 class Banner extends BaseModel
 {
     
-    const TYPE_HOMEPAGE=0 ; 
-    const TYPE_ABOUT_US=1;
-    const TYPE_SERVICES=2;
+
     
     
     public static function getTypes()
     {
         return [
-            self::TYPE_HOMEPAGE=>'Homepage',
-            self::TYPE_ABOUT_US=>'About Us',
-            self::TYPE_SERVICES=>'Services'
+            Page::TYPE_HOMEPAGE=>__('Homepage'),
+            Page::TYPE_ABOUT_US=>__('About Us'),
+            Page::TYPE_SERVICES=>__('Services'),
+            Page::TYPE_CONTACT_US=>__('Contact Us'),
+            Page::TYPE_TEAM=>__('Team')
             
         ];
     }
@@ -27,5 +27,11 @@ class Banner extends BaseModel
     {
         $types=self::getTypes();
         return isset($types[$this->type_id])?$types[$this->type_id]:'Not Defined';
+    }
+    
+    public function getBannerUrl() 
+    {
+        return asset("public/uploads/{$this->path}");
+        
     }
 }

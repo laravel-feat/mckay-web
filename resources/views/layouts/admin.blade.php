@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Ela Admin - HTML5 Admin Template</title>
+<title>{{env('APP_NAME')}} - @if(View::hasSection('title'))
+	@yield('title') @else {{__('Admin')}} @endif</title>
 <meta name="description" content="Ela Admin - HTML5 Admin Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,48 +36,7 @@
 <link href="{{asset('public/backend/css/fullcalendar.min.css')}}"
 	rel="stylesheet" />
 
-<style>
-#weatherWidget .currentDesc {
-	color: #ffffff !important;
-}
 
-.traffic-chart {
-	min-height: 335px;
-}
-
-#flotPie1 {
-	height: 150px;
-}
-
-#flotPie1 td {
-	padding: 3px;
-}
-
-#flotPie1 table {
-	top: 20px !important;
-	right: -10px !important;
-}
-
-.chart-container {
-	display: table;
-	min-width: 270px;
-	text-align: left;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-#flotLine5 {
-	height: 105px;
-}
-
-#flotBarChart {
-	height: 150px;
-}
-
-#cellPaiChart {
-	height: 160px;
-}
-</style>
 </head>
 
 <body>
@@ -86,51 +46,89 @@
 			<div id="main-menu" class="main-menu collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html"><i
-							class="menu-icon fa fa-laptop"></i>Dashboard </a></li>
-					<li class="menu-title">PAGES</li>
+							class="menu-icon fa fa-laptop"></i>{{__('Dashboard')}} </a></li>
+					<li class="menu-title">{{__('PAGES')}}</li>
 					<!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-cogs"></i>Homepage
+							class="menu-icon fa fa-home"></i>{{__('Homepage')}}
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-							<li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-							<li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
+							 
+							<li><i class="fa fa-id-badge"></i><a href="{{route('admin.homepage.section',['section_index'=>1])}}">{{__('Section')}} 1</a></li>
+    					 	<li><i class="fa fa-id-badge"></i><a href="{{route('admin.homepage.section',['section_index'=>2])}}">{{__('Section')}} 2</a></li>
+    					 	<li><i class="fa fa-id-badge"></i><a href="{{route('admin.homepage.section',['section_index'=>3])}}">{{__('Section')}} 3</a></li>
+    					 	<li><i class="fa fa-id-badge"></i><a href="{{route('admin.homepage.section',['section_index'=>4])}}">{{__('Section')}} 4</a></li>
+    					 	
 
 
 						</ul></li>
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-table"></i>Tables
+							class="menu-icon fa fa-table"></i>{{__('Services')}}
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="tables-basic.html">Basic
-									Table</a></li>
-							<li><i class="fa fa-table"></i><a href="tables-data.html">Data
-									Table</a></li>
+							<li><i class="fa fa-table"></i><a href="{{route('admin.services.section',['section_index'=>1])}}">{{__('Section')}} 1</a></li>
+							
 						</ul></li>
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-th"></i>Forms
+							class="menu-icon fa fa-table"></i>{{__('About Us')}}
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic
-									Form</a></li>
-							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Advanced Form</a></li>
+							<li><i class="fa fa-table"></i><a href="{{route('admin.aboutUs.section',['section_index'=>1])}}">{{__('Section')}} 1</a></li>
+							
 						</ul></li>
-
-					<li class="menu-title">Icons</li>
+						
+						
+						
+							<li class="menu-item-has-children dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> <i
+							class="menu-icon fa fa-table"></i>{{__('Team')}}
+					</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="fa fa-table"></i><a href="{{route('admin.team.section',['section_index'=>1])}}">{{__('Section')}} 1</a></li>
+							
+						</ul></li>
+						
+						
+					
+					
+							<li class="menu-item-has-children dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> <i
+							class="menu-icon fa fa-table"></i>{{__('Banners')}}
+					</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="fa fa-table"></i><a href="{{route('admin.banner')}}">{{__('Manage')}} </a></li>
+							
+						</ul></li>
+						
+							
+						
+							<li class="menu-item-has-children dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> <i
+							class="menu-icon fa fa-table"></i>{{__('Other Information')}}
+					</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="fa fa-table"></i><a href="{{route('admin.other.otherInformation.post')}}">{{__('Update')}} </a></li>
+							
+						</ul></li>
+						
+						
+						
+					<li class="menu-title">{{__('Main')}}</li>
 					<!-- /.menu-title -->
 
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-tasks"></i>Icons
+							class="menu-icon fa fa-tasks"></i>Jobs
 					</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="menu-icon fa fa-fort-awesome"></i><a
@@ -138,48 +136,8 @@
 							<li><i class="menu-icon ti-themify-logo"></i><a
 								href="font-themify.html">Themefy Icons</a></li>
 						</ul></li>
-					<li><a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets
-					</a></li>
-					<li class="menu-item-has-children dropdown"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-bar-chart"></i>Charts
-					</a>
-						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-line-chart"></i><a
-								href="charts-chartjs.html">Chart JS</a></li>
-							<li><i class="menu-icon fa fa-area-chart"></i><a
-								href="charts-flot.html">Flot Chart</a></li>
-							<li><i class="menu-icon fa fa-pie-chart"></i><a
-								href="charts-peity.html">Peity Chart</a></li>
-						</ul></li>
-
-					<li class="menu-item-has-children dropdown"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-area-chart"></i>Maps
-					</a>
-						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google
-									Maps</a></li>
-							<li><i class="menu-icon fa fa-street-view"></i><a
-								href="maps-vector.html">Vector Maps</a></li>
-						</ul></li>
-					<li class="menu-title">Extras</li>
-					<!-- /.menu-title -->
-					<li class="menu-item-has-children dropdown"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-glass"></i>Pages
-					</a>
-						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-sign-in"></i><a
-								href="page-login.html">Login</a></li>
-							<li><i class="menu-icon fa fa-sign-in"></i><a
-								href="page-register.html">Register</a></li>
-							<li><i class="menu-icon fa fa-paper-plane"></i><a
-								href="pages-forget.html">Forget Pass</a></li>
-						</ul></li>
+					 
+					 
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -192,10 +150,10 @@
 		<header id="header" class="header">
 			<div class="top-left">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="./"><img src="images/logo.png"
-						alt="Logo"></a> <a class="navbar-brand hidden" href="./"><img
-						src="images/logo2.png" alt="Logo"></a> <a id="menuToggle"
-						class="menutoggle"><i class="fa fa-bars"></i></a>
+					<a class="navbar-brand" href="./"
+						style="color: #00c292; font-weight: 800; font-size: 32px;">
+					<img width="43px" src="{{asset('public/assets/images/logo-icon.png')}}">	
+						Admin </a>
 				</div>
 			</div>
 			<div class="top-right">
@@ -302,21 +260,16 @@
 		<!-- /#header -->
 		<!-- Content -->
 		<div class="content">
-		 @if(session()->has('success'))
-		 
-		<div class="alert alert-success" role="alert">
-             {!! session('success') !!}
-        </div>
-        @endif
-        
-         @if(session()->has('error'))
-		 
-		<div class="alert alert-danger" role="alert">
-             {!! session('error') !!}
-        </div>
-        @endif
-        
-		@yield('content')</div>
+			@if(session()->has('success'))
+
+			<div class="alert alert-success" role="alert">{!! session('success')
+				!!}</div>
+			@endif @if(session()->has('error'))
+
+			<div class="alert alert-danger" role="alert">{!! session('error') !!}
+			</div>
+			@endif @yield('content')
+		</div>
 		<!-- /.content -->
 		<div class="clearfix"></div>
 		<!-- Footer -->
@@ -335,15 +288,15 @@
 	<!-- /#right-panel -->
 
 	<!-- Scripts -->
-	
+
 	<script src="{{asset('public/backend/js/popper.min.js')}}"></script>
 
 	<script src="{{asset('public/backend/js/jquery.min.js')}}"></script>
 	<script src="{{asset('public/backend/js/bootstrap.min.js')}}"></script>
-	    
+
 	<script src="{{asset('public/backend/js/jquery.matchHeight.min.js')}}"></script>
-	
+
 	<script src="{{asset('public/backend/js/main.js')}}"></script>
-@yield('additional_scripts')
+	@yield('additional_scripts')
 </body>
 </html>

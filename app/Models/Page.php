@@ -13,7 +13,14 @@ class Page extends Model
     const TYPE_TEAM =2 ;
     
     const TYPE_CONTACT_US=3;
+    
+    const TYPE_SERVICES=4;
+    
+    const TYPE_OTHER=5;
+    
+    
 
+    const SECTION_INDEX_NONE=0;
     const SECTION_INDEX_ONE = 1;
 
     const SECTION_INDEX_TWO = 2;
