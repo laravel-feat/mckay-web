@@ -885,10 +885,10 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 													href="http://mckay.neuronsit.in/aboutus">{{__('About us')}}</a></li>
 												<li id="menu-item-37"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a
-													href="http://mckay.neuronsit.in/team/">{{__('Team')}}</a></li>
+													href="{{route('frontend.team')}}">{{__('Team')}}</a></li>
 												<li id="menu-item-41"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a
-													href="http://mckay.neuronsit.in/contactus">{{__('Contact')}}</a></li>
+													href="{{route('frontend.contactUs')}}">{{__('Contact')}}</a></li>
 												<li id="menu-item-137"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-137"><a
 													href="#">Eng</a>

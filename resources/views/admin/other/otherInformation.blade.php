@@ -77,8 +77,15 @@ use App\Models\Banner;
   
  <div class="form-group">
     <label for="exampleInputPassword1">{{__('Footer Copyright Text')}}</label>
-    <input type="text" value="{{old('contact_number',@optional($model)->contact_number)}}" class="form-control"  name="footer_copyright_text" aria-describedby="emailHelp">
+    <input type="text" value="{{old('footer_copyright_text',@optional($model)->footer_copyright_text)}}" class="form-control"  name="footer_copyright_text" aria-describedby="emailHelp">
   </div>
+  
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">{{__('Gmap Iframe Link')}}</label>
+    <input type="text" value="{{old('gmap_iframe_link',@optional($model)->gmap_iframe_link)}}" class="form-control"  name="gmap_iframe_link" aria-describedby="emailHelp">
+  </div>
+  
   
   
   

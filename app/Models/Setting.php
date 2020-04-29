@@ -14,7 +14,8 @@ class Setting extends Model
         'twitter_page_link',
         'instagram_page_link',
         'site_logo' ,
-        'footer_copyright_text'  
+        'footer_copyright_text',
+        'gmap_iframe_link'
         
     ];
     

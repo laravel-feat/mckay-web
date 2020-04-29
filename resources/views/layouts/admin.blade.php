@@ -138,6 +138,19 @@
 						</ul></li>
 					 
 					 
+					 	<li class="menu-item-has-children dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> <i
+							class="menu-icon fa fa-tasks"></i>{{__('Enquiries')}}
+					</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="menu-icon fa fa-fort-awesome"></i><a
+								href="{{route('admin.enquiry')}}">{{__('View')}}</a></li>
+					 
+						</ul></li>
+					 
+					 
+					 
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

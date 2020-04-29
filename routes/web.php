@@ -19,6 +19,15 @@ Route::middleware("frontend_basic")->group(function (){
     Route::get('/services',"HomeController@services")->name('frontend.services');
     
     
+    Route::get('/about-us',"HomeController@aboutUs")->name('frontend.aboutUs');
+    
+    
+    Route::get('/team',"HomeController@team")->name('frontend.team');
+    Route::get('/contact-us',"HomeController@contactUs")->name('frontend.contactUs');
+    
+    Route::post('/contact-us',"HomeController@storeEnquiry")->name('frontend.contactUs.post');
+    
+    
 });
 
 // routing for admin
@@ -140,6 +149,7 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         
         
         
+        Route::get('/enquiry', 'EnquiryController@index')->name('admin.enquiry');
         
         
         
