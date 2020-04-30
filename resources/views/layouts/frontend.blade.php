@@ -882,7 +882,7 @@ div#wpcf7-f295-p286-o1 input.wpcf7-form-control.wpcf7-submit {
 													href="{{route('frontend.services')}}">{{__('Our Services')}}</a></li>
 												<li id="menu-item-42"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a
-													href="http://mckay.neuronsit.in/aboutus">{{__('About us')}}</a></li>
+													href="{{route('frontend.aboutUs')}}">{{__('About us')}}</a></li>
 												<li id="menu-item-37"
 													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a
 													href="{{route('frontend.team')}}">{{__('Team')}}</a></li>
