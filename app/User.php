@@ -8,8 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    
-    const ROLE_USER=0 ; 
+    const ROLE_USER=0 ;
     const ROLE_ADMIN=1 ;
     use Notifiable;
     
@@ -19,7 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'full_name',
+         'email',
+          'password',
+          'job_location',
+          'total_experiance','applied_position','gender','address','phone_number'
     ];
 
     /**
@@ -39,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public static function getQualifications()
+    {
+    }
 }

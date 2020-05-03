@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Page;
 use App\Models\Banner;
 use App\Models\Enquiry;
-
+use App\Models\City;
+use App\Models\Position;
 class HomeController extends Controller
 {
     public function index()
@@ -21,6 +22,14 @@ class HomeController extends Controller
         return view("frontend.home",compact(['section1','section2','section3','section4','banner']));
     }
     
+    public function customer() 
+    {
+        $banner=Banner::where('type_id',Page::TYPE_CUSTOMER)->first();
+        $cities= City::getCities() ; 
+        $positions=Position::getAll();
+        return view("frontend.customer",compact(['banner','cities','positions']));
+    }
+
     public function services()
     {
         $section1=Page::where('type_id',Page::TYPE_SERVICES)->where('section_index',Page::SECTION_INDEX_ONE)->first();

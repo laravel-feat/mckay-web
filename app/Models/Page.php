@@ -18,6 +18,7 @@ class Page extends Model
     
     const TYPE_OTHER=5;
     
+    const TYPE_CUSTOMER=6;
     
 
     const SECTION_INDEX_NONE=0;

@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Models\Page;
-
+use App\Models\City;
 /*
  * |--------------------------------------------------------------------------
  * | Web Routes
@@ -12,6 +12,7 @@ use App\Models\Page;
  * | contains the "web" middleware group. Now create something great!
  * |
  */
+
 Route::middleware("frontend_basic")->group(function (){
     
     Route::get('/',"HomeController@index")->name('frontend.home');
@@ -27,6 +28,11 @@ Route::middleware("frontend_basic")->group(function (){
     
     Route::post('/contact-us',"HomeController@storeEnquiry")->name('frontend.contactUs.post');
     
+
+    Route::get('/customer',"HomeController@customer")->name('frontend.customer');
+
+    Route::post('/customer',"UserController@storeCustomer")->name('frontend.customer.add.post');
+
     
 });
 
@@ -150,7 +156,60 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         
         
         Route::get('/enquiry', 'EnquiryController@index')->name('admin.enquiry');
+
+
+
+        Route::get('/position', 'PositionController@index')->name('admin.position');
+
         
+        Route::get('position/add', function () {
+            return view('admin.position.add');
+        })->name('admin.position.add');
+
+        Route::post('position/add', 'PositionController@store')->name('admin.position.add.post');
+
+        Route::get('position/update/{model}', 'PositionController@update')->name('admin.position.update');
+
+        Route::post('position/update/{model}', 'PositionController@doUpdate')->name('admin.position.update.post');
+
+
+
+        Route::get('/job-category', 'JobCategoryController@index')->name('admin.jobCategory');
+
+        
+        Route::get('job-category/add', function () {
+            return view('admin.job-category.add');
+        })->name('admin.jobCategory.add');
+
+        Route::post('job-category/add', 'JobCategoryController@store')->name('admin.jobCategory.add.post');
+
+        Route::get('job-category/update/{model}', 'JobCategoryController@update')->name('admin.jobCategory.update');
+
+        Route::post('job-category/update/{model}', 'JobCategoryController@doUpdate')->name('admin.jobCategory.update.post');
+
+        Route::get('job-category/delete/{model}', 'JobCategoryController@delete')->name('admin.jobCategory.delete');
+
+
+
+
+
+
+
+        Route::get('/job', 'JobController@index')->name('admin.job');
+
+
+        Route::get('job/add', function () {
+            return view('admin.job.add');
+        })->name('admin.job.add');
+
+        Route::post('job/add', 'JobController@store')->name('admin.job.add.post');
+
+        Route::get('job/update/{model}', 'JobController@update')->name('admin.job.update');
+
+        Route::post('job/update/{model}', 'JobController@doUpdate')->name('admin.job.update.post');
+        Route::get('job/delete/{model}', 'JobController@delete')->name('admin.job.delete');
+
+
         
         
         Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
