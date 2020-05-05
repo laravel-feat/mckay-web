@@ -218,9 +218,7 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
         Route::get('/job', 'JobController@index')->name('admin.job');
 
 
-        Route::get('job/add', function () {
-            return view('admin.job.add');
-        })->name('admin.job.add');
+        Route::get('job/add', 'JobController@add')->name('admin.job.add');
 
         Route::post('job/add', 'JobController@store')->name('admin.job.add.post');
 

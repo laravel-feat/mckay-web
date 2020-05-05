@@ -53,6 +53,7 @@ class Job extends Model
     protected $fillable=[
         'title',
         'type_id',
+        'category_id',
         'job_rating',
         'skype_username',
         'contact_number',

@@ -18,7 +18,7 @@
                                 <div class="elementor-widget-wrap">
                                     <div class="elementor-element elementor-element-55fa639 elementor-widget elementor-widget-heading" data-id="55fa639" data-element_type="widget" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Latest Jobs</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">{{__('Latest Jobs')}}</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -105,186 +105,7 @@
                     </div>
                 </div>
             </section>
-            <section class="elementor-element elementor-element-6dda556 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6dda556" data-element_type="section">
-                <div class="elementor-container elementor-column-gap-default">
-                    <div class="elementor-row">
-                        <div class="elementor-element elementor-element-8bdef93 elementor-column elementor-col-100 elementor-top-column" data-id="8bdef93" data-element_type="column">
-                            <div class="elementor-column-wrap  elementor-element-populated">
-                                <div class="elementor-widget-wrap">
-                                    <section class="elementor-element elementor-element-a2d5868 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="a2d5868" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-row">
-                                                <div class="elementor-element elementor-element-cc967cd elementor-column elementor-col-100 elementor-inner-column" data-id="cc967cd" data-element_type="column">
-                                                    <div class="elementor-column-wrap  elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-e28740c elementor-widget elementor-widget-html" data-id="e28740c" data-element_type="widget" data-widget_type="html.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <style>
-                                                                        .job-search-form {
-                                                                            background: #f2f2f2;
-                                                                            padding: 20px;
-                                                                            float: left;
-                                                                            display: block;
-                                                                            width: 100%;
-                                                                        }
-
-                                                                        .form-outer {
-                                                                            float: left;
-                                                                            display: block;
-                                                                            width: 23%;
-                                                                            margin: 0 8px;
-                                                                        }
-
-                                                                        .form-outer input[type="text"] {
-                                                                            background: #fff;
-                                                                            width: 100%;
-                                                                        }
-
-                                                                        .form-outer button {
-                                                                            width: 100%;
-                                                                            font-size: 16px;
-                                                                            padding: 14px;
-                                                                        }
-
-                                                                        select#cars {
-                                                                            width: 100%;
-                                                                            background: #fff;
-                                                                        }
-
-                                                                        .Recent-jobs {
-                                                                            margin: 40px 0px;
-                                                                            float: left;
-                                                                        }
-
-                                                                        .jobs-outer {
-                                                                            width: 31%;
-                                                                            border: 1px solid #eee;
-                                                                            padding: 0px;
-                                                                            text-align: center;
-                                                                            border-radius: 4px;
-                                                                            float: left;
-                                                                            margin: 0px 12px;
-                                                                        }
-
-                                                                        .jobs-outer h4 {
-                                                                            text-align: left;
-                                                                            font-weight: 600;
-                                                                            padding: 15px 15px 0;
-                                                                            color: #0274be;
-                                                                            font-size: 24px;
-                                                                            margin: 0;
-                                                                        }
-
-                                                                        .jobs-outer p {
-                                                                            padding: 15px;
-                                                                            color: #2a2a2a;
-                                                                            font-size: 14px;
-                                                                            text-align: left;
-                                                                            margin: 0;
-                                                                        }
-
-                                                                        hr {
-                                                                            background-color: #eee !important;
-                                                                            width: 95%;
-                                                                            margin: 0 auto !important;
-                                                                        }
-
-                                                                        span.job-category {
-                                                                            text-align: center;
-                                                                            /* float: left; */
-                                                                            padding: 2px;
-                                                                            display: block;
-                                                                            width: 30%;
-                                                                            background: green;
-                                                                            color: #fff;
-                                                                            margin: 10px 13px;
-                                                                            float: left;
-                                                                        }
-
-                                                                        span.job-time {
-                                                                            display: block;
-                                                                            width: 62%;
-                                                                            float: left;
-                                                                            margin: 10px 0;
-                                                                            color: #2a2a2a;
-                                                                            text-align: left;
-                                                                            padding: 0px 15px;
-                                                                        }
-
-                                                                    </style>
-                                                                    <div class="job-search-form">
-                                                                        <div class="form-outer">
-                                                                            <input type="text" placeholder="Job title or Keyword">
-                                                                        </div>
-                                                                        <div class="form-outer">
-                                                                            <input type="text" placeholder="Loaction">
-                                                                        </div>
-                                                                        <div class="form-outer">
-
-                                                                            <select id="cars">
-                                                                                <option class="disabled">Select Category</option>
-                                                                                <option>Freelancer</option>
-                                                                                <option>Full time</option>
-                                                                                <option>Internship</option>
-                                                                                <option>Part time</option>
-                                                                                <option>Temporary</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-outer">
-                                                                            <button type="submit">Search</button>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="Recent-jobs">
-                                                                        <div class="jobs-outer">
-                                                                            <img src="http://mckay.neuronsit.in/wp-content/uploads/2020/03/aetsa11-medium-kemira-733x440-1.jpg">
-
-                                                                            <h4>Graduate Programme – IT Software Test Analyst</h4>
-                                                                            <p>Far much that one rank beheld bluebird after outside ignobly allegedly more a glowered inset one echidna cassowary some parrot and much as goodness.</p>
-                                                                            <hr>
-                                                                            <span class="job-time">9 minutes ago</span>
-                                                                            <span class="job-category">Full-Time</span>
-
-
-                                                                        </div>
-                                                                        <div class="jobs-outer">
-                                                                            <img src="http://mckay.neuronsit.in/wp-content/uploads/2020/03/aetsa11-medium-kemira-733x440-1.jpg">
-
-                                                                            <h4>Graduate Programme – IT Software Test Analyst</h4>
-                                                                            <p>Far much that one rank beheld bluebird after outside ignobly allegedly more a glowered inset one echidna cassowary some parrot and much as goodness.</p>
-                                                                            <hr>
-                                                                            <span class="job-time">9 minutes ago</span>
-                                                                            <span class="job-category">Full-Time</span>
-
-
-                                                                        </div>
-                                                                        <div class="jobs-outer">
-                                                                            <img src="http://mckay.neuronsit.in/wp-content/uploads/2020/03/aetsa11-medium-kemira-733x440-1.jpg">
-
-                                                                            <h4>Graduate Programme – IT Software Test Analyst</h4>
-                                                                            <p>Far much that one rank beheld bluebird after outside ignobly allegedly more a glowered inset one echidna cassowary some parrot and much as goodness.</p>
-                                                                            <hr>
-                                                                            <span class="job-time">9 minutes ago</span>
-                                                                            <span class="job-category">Full-Time</span>
-
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
             <section class="elementor-element elementor-element-4da0a2e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="4da0a2e" data-element_type="section">
                 <div class="elementor-container elementor-column-gap-default">
                     <div class="elementor-row">
@@ -618,6 +439,8 @@
                                                 }
 
                                             </style>
+                                            <form method="get" action="">
+                                             
                                             <div class="show-hide-sidebar hidden-xs hidden-sm">
 
                                                 <!-- Search Job -->
@@ -625,28 +448,27 @@
 
                                                     <div class="ur-detail-wrap">
                                                         <div class="ur-detail-wrap-header">
-                                                            <h4>Search Job Here</h4>
+                                                            <h4>{{__('Search Job Here')}}</h4>
                                                         </div>
                                                         <div class="ur-detail-wrap-body">
                                                             <form>
                                                                 <div class="form-group">
-                                                                    <label>Keyword</label>
-                                                                    <input type="text" class="form-control" placeholder="Job Title or Keyword">
+                                                                    <label>{{__('Keyword')}}</label>
+                                                                <input type="text" value="{{request()->get('keyword')}}" name="keyword" class="form-control" placeholder="Job Title or Keyword">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Location</label>
-                                                                    <input type="text" class="form-control" placeholder="ex. New York">
+                                                                    <label>{{__('Location')}}</label>
+                                                                    <input type="text" value="{{request()->get('location')}}" name="location" class="form-control" placeholder="ex. New York">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Category</label>
-                                                                    <select id="choose-category" class="form-control">
-                                                                        <option>Choose Category</option>
-                                                                        <option>Banking Job</option>
-                                                                        <option>IT / Software</option>
-                                                                        <option>Medical &amp; Hospital</option>
-                                                                        <option>Networking</option>
-                                                                        <option>Automotive</option>
-                                                                        <option>Business Development</option>
+                                                                    <label>{{__('Category')}}</label>
+                                                                    <select id="choose-category" name="category" class="form-control">
+                                                                        <option value="" >{{__('Choose Category')}}</option>
+                                                                        @foreach($jobCategories as $key=>$jobCategory)
+                                                                        <option value="{{$key}}"  {{(request()->get('category')==$key)?'selected':''}}>{{$jobCategory}}</option>
+                                                                        @endforeach
+                                                                        
+                                                                     
                                                                     </select>
                                                                 </div>
                                                                 <button type="submit" class="btn btn-primary full-width">Find Jobs</button>
@@ -664,42 +486,53 @@
                                                     <div class="ur-detail-wrap">
 
                                                         <div class="ur-detail-wrap-header">
-                                                            <h4>Experince</h4>
+                                                            <h4>{{__('Experiance')}}</h4>
                                                         </div>
                                                         <div class="ur-detail-wrap-body">
                                                             <ul class="advance-list">
                                                                 <li>
                                                                     <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="uy">
+                                                                        <input {{(is_array(request()->get('experiance')) && in_array('0_1',request()->get('experiance')))?'checked':''}} value="0_1" name="experiance[]" type="checkbox" id="uy">
                                                                         <label for="uy"></label>
                                                                     </span>
-                                                                    0 - 1 Year
-                                                                    <span class="pull-right">102</span>
+                                                                    {{__('0 - 1 Year')}}
+                                                                    <span class="pull-right">{{@$experianceCount[0]+@$experianceCount[1]}}</span>
                                                                 </li>
                                                                 <li>
                                                                     <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="io">
+                                                                        <input {{(is_array(request()->get('experiance')) && in_array('1_2',request()->get('experiance')))?'checked':''}} value="1_2" name="experiance[]" type="checkbox" id="io">
                                                                         <label for="io"></label>
                                                                     </span>
-                                                                    1 - 2 Year
-                                                                    <span class="pull-right">78</span>
+                                                                   {{__('1 - 2 Year')}}
+                                                                    <span class="pull-right">{{@$experianceCount[1]+@$experianceCount[2]}}</span>
                                                                 </li>
                                                                 <li>
                                                                     <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="lo">
+                                                                        <input {{(is_array(request()->get('experiance')) && in_array('2_4',request()->get('experiance')))?'checked':''}} value="2_4" name="experiance[]" type="checkbox" id="lo">
                                                                         <label for="lo"></label>
                                                                     </span>
-                                                                    2 - 4 Year
-                                                                    <span class="pull-right">12</span>
+                                                                    {{_('2 - 4 Year')}}
+                                                                    <span class="pull-right">{{@$experianceCount[2]+@$experianceCount[3]+@$experianceCount[4]}}</span>
                                                                 </li>
                                                                 <li>
                                                                     <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="kj">
+                                                                        <input {{(is_array(request()->get('experiance')) && in_array('4_6',request()->get('experiance')))?'checked':''}} value="4_6" name="experiance[]" type="checkbox" id="kj">
                                                                         <label for="kj"></label>
                                                                     </span>
-                                                                    4 - 6 Year
-                                                                    <span class="pull-right">85</span>
+                                                                    {{__('4 - 6 Year')}}
+                                                                    <span class="pull-right">{{@$experianceCount[4]+@$experianceCount[5]+@$experianceCount[6]}}</span>
                                                                 </li>
+
+                                                                <li>
+                                                                    <span class="custom-checkbox">
+                                                                        <input {{(is_array(request()->get('experiance')) && in_array('6_10',request()->get('experiance')))?'checked':''}} value="6_10" name="experiance[]" type="checkbox" id="kj">
+                                                                        <label for="kj"></label>
+                                                                    </span>
+                                                                    {{__('6 - 10 Year')}}
+                                                                    <span class="pull-right">{{@$experianceCount[6]+@$experianceCount[7]+@$experianceCount[8]+@$experianceCount[9]+@$experianceCount[10]}}</span>
+                                                                </li>
+
+
                                                             </ul>
                                                         </div>
 
@@ -712,42 +545,21 @@
                                                     <div class="ur-detail-wrap colps-wrap">
 
                                                         <div class="ur-detail-wrap-header">
-                                                            <h4>Job Type</h4>
+                                                            <h4>{{__('Job Type')}}</h4>
                                                         </div>
                                                         <div class="ur-detail-wrap-body">
                                                             <ul class="advance-list">
+                                                                @foreach($jobTypes as $key=>$jobType)
                                                                 <li>
                                                                     <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="1">
+                                                                    <input {{(is_array(request()->get('job_type')) && in_array($key,request()->get('job_type')))?'checked':''}} type="checkbox" name="job_type[]"  value="{{$key}}">
                                                                         <label for="1"></label>
                                                                     </span>
-                                                                    Full Time
-                                                                    <span class="pull-right">102</span>
+                                                                    {{$jobType}}
+                                                                    <span class="pull-right">{{@$jobTypeCount[$key]+0}}</span>
                                                                 </li>
-                                                                <li>
-                                                                    <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="2">
-                                                                        <label for="2"></label>
-                                                                    </span>
-                                                                    Part Time
-                                                                    <span class="pull-right">78</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="3">
-                                                                        <label for="3"></label>
-                                                                    </span>
-                                                                    Internship
-                                                                    <span class="pull-right">12</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="custom-checkbox">
-                                                                        <input type="checkbox" id="4">
-                                                                        <label for="4"></label>
-                                                                    </span>
-                                                                    Freelancer
-                                                                    <span class="pull-right">85</span>
-                                                                </li>
+                                                                @endforeach
+                                                             
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -755,7 +567,7 @@
                                                 <!-- /Job Type -->
 
                                             </div>
-
+                                        </form>
 
 
 
@@ -771,7 +583,7 @@
                                                             <a href="{{route('frontend.jobs.view',['model'=>$model])}}"> </a>
                                                         </div>
                                                         <div class="cll-caption">
-                                                            <h4><a href="http://mckay.neuronsit.in/job-details">Product Designer</a>
+                                                            <h4><a href="http://mckay.neuronsit.in/job-details">{{$model->title}}</a>
                                                                 <!--span class="jb-status full-time">Full Time</span-->
                                                             </h4>
                                                         <p>{{$model->short_desc}}</p>
@@ -794,8 +606,9 @@
 
 
 
-
+                                                {{ $models->links() }}
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

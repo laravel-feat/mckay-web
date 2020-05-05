@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Job;
+use App\Models\JobCategory ; 
 class JobController extends Controller
 {
     public function index() 
@@ -12,10 +13,18 @@ class JobController extends Controller
         $models=Job::paginate()  ; 
         return view('admin.job.index')->with('models',$models) ;
     }
+
+    public function add() 
+    {
+        $jobCategories=JobCategory::pluck('title','id')->all() ;
+        return view('admin.job.add',['jobCategories'=>$jobCategories]);
+
+    }
     
     public function update(Job $model) 
     {
-        return view('admin.job.update',['model'=>$model]);
+        $jobCategories=JobCategory::pluck('title','id')->all() ;
+        return view('admin.job.update',['model'=>$model,'jobCategories'=>$jobCategories]);
     }
 
     public function doUpdate(Request $request,Job $model) 
@@ -65,6 +74,7 @@ class JobController extends Controller
         return [
             'title'=>'required',
             'type_id'=>'required',
+            'category_id'=>'required',
             'contact_number'=>'required',
             'company_name'=>'required',
             'job_rating'=>'required|numeric',

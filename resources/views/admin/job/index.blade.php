@@ -6,7 +6,7 @@
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-header">
-            <strong class="card-title">{{__('Position')}}</strong> 
+            <strong class="card-title">{{__('Jobs')}}</strong> 
         <div class="pull-right"><a class="btn btn-warning" href="{{route('admin.job.add')}}">Add <i class="fa fa-plus"></i></a></div>
 		</div>
 		<div class="card-body">

@@ -19,6 +19,19 @@ use App\Models\Job;
     </div>
 
     <div class="form-group">
+        <label for="company" class=" form-control-label">{{__('Category')}}</label>
+        <select class="form-control" name="category_id">
+            <option value="">---{{__('Select')}}---</option>
+            @foreach($jobCategories as $key=> $jobCategory)
+                <option value="{{$key}}" {{(old('category',optional(@$model)->category_id)==$key)?'selected':''}}>{{$jobCategory}}</option>
+            @endforeach
+        </select>
+        
+        <span class="help-block is-invalid">{{$errors->first('category_id')}}</span>
+    </div>
+
+
+    <div class="form-group">
         <label for="company" class=" form-control-label">{{__('Job Type')}}</label>
         <select class="form-control" name="type_id">
             <option value="">---{{__('Select')}}---</option>
@@ -29,6 +42,8 @@ use App\Models\Job;
         
         <span class="help-block is-invalid">{{$errors->first('title')}}</span>
     </div>
+
+
 
 
     <div class="form-group">

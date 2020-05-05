@@ -380,7 +380,7 @@ font-size: 14px;
                                         <li>
                                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                             <div class="desc">
-                                            <h5>Qualification</h5>
+                                            <h5>{{__('Qualification')}}</h5>
                                             <span>Master Degree</span>
                                             </div>
                                         </li>

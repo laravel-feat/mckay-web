@@ -19,6 +19,12 @@ class Page extends Model
     const TYPE_OTHER=5;
     
     const TYPE_CUSTOMER=6;
+
+    const TYPE_LATEST_JOBS=7;
+
+    const TYPE_JOB_DETAIL=8;
+
+    const TYPE_CHAT=9;
     
 
     const SECTION_INDEX_NONE=0;
