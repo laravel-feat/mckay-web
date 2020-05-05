@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html"><i class="menu-icon fa fa-laptop"></i>{{__('Dashboard')}} </a></li>
+                    <li class="active"><a href="{{route('admin.dashboard')}}"><i class="menu-icon fa fa-laptop"></i>{{__('Dashboard')}} </a></li>
                     <li class="menu-title">{{__('PAGES')}}</li>
                     <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-home"></i>{{__('Homepage')}}
@@ -103,6 +103,14 @@
 
              
 
+                     <li class="menu-item-has-children dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>{{__('User')}}
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{route('admin.user')}}">{{__('View')}}</a></li>
+
+                        </ul>
+                    </li>
+
 
                     <li class="menu-item-has-children dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>{{__('Enquiries')}}
                         </a>
@@ -143,7 +151,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./" style="color: #00c292; font-weight: 800; font-size: 32px;">
+                    <a class="navbar-brand" href="{{route('admin.dashboard')}}" style="color: #00c292; font-weight: 800; font-size: 32px;">
                         <img width="43px" src="{{asset('public/assets/images/logo-icon.png')}}">
                         Admin </a>
                 </div>

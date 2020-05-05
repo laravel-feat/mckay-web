@@ -4,21 +4,27 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Job;
-class JobController extends Controller
+use App\User;
+class UserController extends Controller
 {
-    public function index() 
-    {
-        $models=Job::paginate()  ; 
-        return view('admin.job.index')->with('models',$models) ;
-    }
     
-    public function update(Job $model) 
+    public function chat(User $model) 
     {
-        return view('admin.job.update',['model'=>$model]);
+        return view('admin.user.chat',['model'=>$model]);
     }
 
-    public function doUpdate(Request $request,Job $model) 
+    public function index() 
+    {
+        $models=User::where("role_id",User::ROLE_USER)->paginate()  ; 
+        return view('admin.user.index')->with('models',$models) ;
+    }
+    
+    public function update(User $model) 
+    {
+        return view('admin.user.update',['model'=>$model]);
+    }
+
+    public function doUpdate(Request $request,User $model) 
     {
         $data=$request->validate($this->getValidation()+[ 'company_logo' =>'image|mimes:jpeg,png,jpg,gif|max:2048',]);
         
@@ -57,7 +63,7 @@ class JobController extends Controller
     {
         $model->delete() ;
 
-         return redirect()->back()->withSuccess(__('Job Deleted Successfuly'));
+         return redirect()->back()->withSuccess(__('User Deleted Successfuly'));
     }
 
     protected function getValidation() 

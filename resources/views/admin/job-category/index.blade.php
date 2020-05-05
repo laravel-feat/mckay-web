@@ -15,6 +15,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{__('Name')}}</th>
+                        <th scope="col">{{__('Posted On')}}</th>
                         <th scope="col">{{__('Action')}}</th>
                     </tr>
                 </thead>
@@ -23,6 +24,7 @@
                     <tr>
                         <th class="align-middle" scope="row">{{$model->id}}</th>
                         <td class="align-middle">{{$model->title}}</td>
+                        <td class="align-middle">{{$model->created_at}}</td>
                     <td class="align-middle"><a href="{{route('admin.jobCategory.update',['model'=>$model])}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a><a href="{{route('admin.jobCategory.delete',['model'=>$model])}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
 
                     </tr>

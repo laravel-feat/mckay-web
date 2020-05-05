@@ -27,9 +27,28 @@ class Job extends Model
     public function getType()
     {
         $list=self::getTypes(); 
-        return isset($list[$this->type-id])?$list[$this->type_id]:'NA';
+        return isset($list[$this->type_id])?$list[$this->type_id]:'NA';
     }
 
+    public function getRating() 
+    {
+        $rating=round($this->job_rating);
+        $rating=min($rating,5);
+        
+        $html = '' ;
+        for($i=1;$i<=$rating;$i++)
+        {
+            $html.='<i class="fa fa-star filled"></i>';
+        }
+
+        for($i=$rating;$i<5;$i++)
+        {
+             $html.='<i class="fa fa-star"></i>'; 
+        }
+        return $html;
+        
+        
+    }
 
     protected $fillable=[
         'title',
@@ -48,7 +67,8 @@ class Job extends Model
         'salary_from',
         'salary_to',
         'qualification',
-        'contact_email'
+        'contact_email',
+        'short_desc'
     ];
 
     public function getCompanyLogo() 

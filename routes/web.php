@@ -33,6 +33,26 @@ Route::middleware("frontend_basic")->group(function (){
 
     Route::post('/customer',"UserController@storeCustomer")->name('frontend.customer.add.post');
 
+
+    Route::get('/jobs',"JobController@index")->name('frontend.jobs');
+
+
+    Route::get('/job/{model}',"JobController@view")->name('frontend.jobs.view');
+
+
+    Route::get('/chat',"ChatController@index")->name('frontend.chat');
+
+    Route::get('/get-messages',"ChatController@getMessages")->name('frontend.chat.get');
+
+
+    Route::post('/send-message',"ChatController@sendMessage")->name('frontend.sendMessage');
+
+    Route::post('/customer/login',"UserController@login")->name('frontend.login.post');
+
+
+
+
+
     
 });
 
@@ -211,6 +231,27 @@ Route::namespace('Admin')->prefix("admin")->group(function () {
 
 
         
+        
+        Route::get('/user', 'UserController@index')->name('admin.user');
+
+        Route::get('/user/chat/{model}', 'UserController@chat')->name('admin.user.chat');
+
+
+        Route::get('user/add', function () {
+            return view('admin.user.add');
+        })->name('admin.user.add');
+
+        Route::post('user/add', 'JobController@store')->name('admin.user.add.post');
+
+        Route::get('user/update/{model}', 'UserController@update')->name('admin.user.update');
+
+        Route::post('user/update/{model}', 'UserController@doUpdate')->name('admin.user.update.post');
+        Route::get('user/delete/{model}', 'UserController@delete')->name('admin.user.delete');
+
+
+        
+
+
         
         Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
     });

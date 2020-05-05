@@ -3,7 +3,7 @@
 
 <p>Hi <b>{{$model->full_name}}</b>,</p>
                         <p>
-                           {{__('mails.thank_you_signup',['sitename'=>env('app_name')])}} 
+                           {{__('mails.thank_you_signup',['sitename'=>env('APP_NAME')])}} 
                            <br/>
                            {!!__('mails.your_unique_code',['unique_code'=>"<b>{$model->unique_code}</b>"])!!}     
 
@@ -15,8 +15,8 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                        
-                                      <td> <a href="{{route('frontend.home')}}" target="_blank">{{__('Visit :sitename',['sitename'=>env('app_name')])}}</a> </td>
+                                      
+                                      <td> <a href="{{url('/')}}" target="_blank">{{__('Visit :sitename',['sitename'=>env('APP_NAME')])}}</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>

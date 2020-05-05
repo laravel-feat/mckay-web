@@ -578,8 +578,10 @@
 
 
                                                                             @if (count($errors) > 0)
+                                                                            
                                                                             <ul id="login-validation-errors" class="validation-errors">
-                                                                                @foreach ($errors->all() as $error)
+                                                                                @foreach ($errors->all() as $key=> $error)
+                                                                               
                                                                                 <li style="color:red;" class="validation-error-item">{{ $error }}</li>
                                                                                 @endforeach
                                                                             </ul>
@@ -673,20 +675,21 @@
                                                                     </div>
 
                                                                     <div class="form-v5-content" style="width:35%;">
-                                                                        <form class="form-detail" action="#" method="post">
+                                                                    <form class="form-detail" action="{{route('frontend.login.post')}}" method="post">
+                                                                            @csrf
                                                                             <h2>{{__('Registered Users')}}</h2>
+ 
                                                                             <div class="form-row">
                                                                                 <label for="full-name">{{__('Unique Code')}}</label>
-                                                                                <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Unique code" required="">
+                                                                                <input type="text" name="unique_code"   class="input-text" placeholder="Your Unique code" required="">
                                                                             </div>
-                                                                            <!--div class="form-row">
-					<label for="your-email">Your Email</label>
-					<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required>
-				</div>
-				<div class="form-row">
-					<label for="password">Password</label>
-					<input type="password" name="password" id="password" class="input-text" placeholder="Your Password" required>
-				</div--->
+                                                                               
+        <span style="color:red" class="help-block is-invalid">
+            @if(Session::has('loginError'))
+            {{Session::get('loginError')}}
+            @endif
+        
+        </span> 
                                                                             <div class="form-row-last">
                                                                                 <input type="submit" name="register" class="register" value="Submit">
                                                                             </div>

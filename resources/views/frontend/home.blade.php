@@ -32,7 +32,7 @@
                                         <div class="elementor-element elementor-element-3c419dd elementor-align-left elementor-widget elementor-widget-button" data-id="3c419dd" data-element_type="widget" data-widget_type="button.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
-                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
+                                                <a href="{{route('frontend.jobs')}}" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
                                                                 <i aria-hidden="true" class="fas fa-user-tie"></i>
                                                             </span> <span class="elementor-button-text">{{__('LATEST JOBS')}}</span>
                                                         </span>
@@ -43,7 +43,7 @@
                                         <div class="elementor-element elementor-element-0636cdf elementor-align-left elementor-absolute elementor-widget elementor-widget-button" data-id="0636cdf" data-element_type="widget" id="Customer" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="button.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
-                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
+                                                    <a href="{{route('frontend.customer')}}" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
                                                                 <i aria-hidden="true" class="fas fa-user-friends"></i>
                                                             </span> <span class="elementor-button-text">{{__('CUSTOMER')}}</span>
                                                         </span>
@@ -54,7 +54,7 @@
                                         <div class="elementor-element elementor-element-f72c498 elementor-align-left elementor-absolute elementor-widget elementor-widget-button" data-id="f72c498" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="button.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
-                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
+                                                    <a href="{{route('frontend.contactUs')}}" class="elementor-button-link elementor-button elementor-size-sm" role="button"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon elementor-align-icon-right">
                                                                 <i aria-hidden="true" class="fas fa-phone-alt"></i>
                                                             </span> <span class="elementor-button-text">{{__('CONTACT US')}}</span>
                                                         </span>

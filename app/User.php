@@ -44,6 +44,12 @@ class User extends Authenticatable
     ];
 
 
+    public function getProfileImage() 
+    {
+        return asset("public/uploads/{$this->profile_path}");
+        
+    }
+
     public static function getQualifications()
     {
     }
