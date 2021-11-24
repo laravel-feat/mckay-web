@@ -1,0 +1,359 @@
+@extends('layouts.frontend')
+
+@section('content')
+
+<link rel='stylesheet' id='mg_wpsi_icons-css' href="{{asset('public/css/post-627.css')}}" media='all' />
+
+
+<div data-elementor-type="wp-page" data-elementor-id="627" class="elementor elementor-627" data-elementor-settings="[]">
+    <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+                    <section class="elementor-element elementor-element-49d05ba elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="49d05ba" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-background-overlay"></div>
+                    <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+        <div class="elementor-element elementor-element-88547b1 elementor-column elementor-col-100 elementor-top-column" data-id="88547b1" data-element_type="column">
+    <div class="elementor-column-wrap  elementor-element-populated">
+            <div class="elementor-widget-wrap">
+        <div class="elementor-element elementor-element-deb5ea7 elementor-widget elementor-widget-heading" data-id="deb5ea7" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+    <h2 class="elementor-heading-title elementor-size-default">Customer profile</h2>		</div>
+        </div>
+                </div>
+    </div>
+</div>
+                </div>
+    </div>
+</section>
+        <section class="elementor-element elementor-element-2f7be78 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2f7be78" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+        <div class="elementor-element elementor-element-8824223 elementor-column elementor-col-100 elementor-top-column" data-id="8824223" data-element_type="column">
+    <div class="elementor-column-wrap  elementor-element-populated">
+            <div class="elementor-widget-wrap">
+        <div class="elementor-element elementor-element-bec6e63 elementor-widget elementor-widget-html" data-id="bec6e63" data-element_type="widget" data-widget_type="html.default">
+        <div class="elementor-widget-container">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+<style>
+.container{max-width:1170px; margin:auto;}
+img{ max-width:100%;}
+.inbox_people {
+background: #f8f8f8 none repeat scroll 0 0;
+float: left;
+overflow: hidden;
+width: 40%; border-right:1px solid #c4c4c4;
+}
+.inbox_msg {
+border: 1px solid #c4c4c4;
+clear: both;
+overflow: hidden;
+}
+.top_spac{ margin: 20px 0 0;}
+
+
+.recent_heading {float: left; width:40%;}
+.srch_bar {
+display: inline-block;
+text-align: right;
+width: 60%; padding:
+}
+.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
+
+.recent_heading h4 {
+color: #05728f;
+font-size: 21px;
+margin: auto;
+}
+.srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
+.srch_bar .input-group-addon button {
+background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+border: medium none;
+padding: 0;
+color: #707070;
+font-size: 18px;
+}
+.srch_bar .input-group-addon { margin: 0 0 0 -27px;}
+
+.chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
+.chat_ib h5 span{ font-size:13px; float:right;}
+.chat_ib p{ font-size:14px; color:#989898; margin:auto}
+.chat_img {
+float: left;
+width: 11%;
+}
+.chat_ib {
+float: left;
+padding: 0 0 0 15px;
+width: 88%;
+}
+
+.chat_people{ overflow:hidden; clear:both;}
+.chat_list {
+border-bottom: 1px solid #c4c4c4;
+margin: 0;
+padding: 18px 16px 10px;
+}
+.inbox_chat { height: 550px; overflow-y: scroll;}
+
+.active_chat{ background:#ebebeb;}
+
+.incoming_msg_img {
+display: inline-block;
+width: 70px;
+padding-left: 10px;
+padding-top: 10px;
+}
+.received_msg {
+display: inline-block;
+padding: 0 0 0 10px;
+vertical-align: top;
+width: 92%;
+}
+.received_withd_msg p {
+background: #ebebeb none repeat scroll 0 0;
+border-radius: 3px;
+color: #646464;
+font-size: 14px;
+margin: 0;
+padding: 20px 20px 20px 20px;
+width: 100%;
+}
+.time_date {
+color: #747474;
+display: block;
+font-size: 12px;
+margin: 8px 0 0;
+}
+.received_withd_msg { width: 57%;}
+.mesgs {
+float: left;
+padding:0px 0px;
+width: 100%;
+}
+h3.text-center {
+padding: 20px;
+color: #fff;
+background: #0078E1;
+margin: 0 0 30px;
+text-align: left !important;
+}
+.sent_msg p {
+background: #0078E1 none repeat scroll 0 0;
+border-radius: 3px;
+font-size: 14px;
+margin: 0; color:#fff;
+padding: 20px;
+width:100%;
+}
+.outgoing_msg {
+overflow: hidden;
+margin: 26px 0 26px 0px;
+display: inline-flex;
+align-items: center;
+justify-content: flex-end;
+width: 100%;
+}
+.sent_msg {
+float: right;
+width: 46%;
+}
+.input_msg_write input {
+background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+border: medium none;
+color: #4c4c4c;
+font-size: 15px;
+min-height: 48px;
+width: 100%;
+}
+
+.type_msg {
+border-top: 1px solid #c4c4c4;
+position: relative;
+width: 97%;
+margin: 10px 10px;
+}
+.msg_send_btn {
+background: #0078E1 none repeat scroll 0 0;
+border: medium none;
+border-radius: 50%;
+color: #fff;
+cursor: pointer;
+font-size: 17px;
+height: 46px;
+position: absolute;
+right: 6px;
+top: 5px;
+width: 8px;
+padding-top: 0px;
+padding-right: 35px;
+padding-bottom: 0px;
+padding-left: 20px;
+}
+.messaging {
+background: #f6f6f6;
+}
+.msg_history {
+height: 516px;
+overflow-y: auto;
+}
+.input_msg_write textarea {
+background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+border: medium none;
+color: #2a2a2a;
+font-size: 15px;
+width: 86%;
+height: 60px;
+line-height: 1.8;
+margin-left: 60px;
+}
+.outgoing_msg img.avatar {
+width: 50px;
+margin-bottom: 20px;
+margin-right: 10px;
+}
+button.attch {
+position: absolute;
+padding: 10px 20px;
+margin-top: 5px;
+background: #0078E1;
+}
+</style>
+
+
+<div class="container">
+<div class="messaging">
+<div class="inbox_msg">
+<h3 class=" text-center">Czech authorities</h3>
+
+<div class="mesgs">
+  <div class="msg_history">
+    
+  </div>
+  <div class="type_msg">
+    <div class="input_msg_write">
+    <button class="attch" type="button"><i class="fa fa-camera" aria-hidden="true"></i></button>
+      <!--input type="text" class="write_msg" placeholder="Type a message" /-->
+      <textarea id="w3mission" rows="4" cols="50" placeholder="Type a message"></textarea>
+      <button class="msg_send_btn" id="send" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+</div>
+</div></div>
+
+    </div>
+        </div>
+                </div>
+    </div>
+</div>
+                </div>
+    </div>
+</section>
+                </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+function appendChat(e) {
+    var id = e.target.id;
+    //variables for testing, you could have all of the
+    //comparisons in the 'if' statement, just using these to
+    //make the 'if' statement more clear
+    var notEmpty = $(".usertext").val() != "",
+        isEnterKeypress = e.type == "keypress" && e.keyCode == 13,
+        isSendClick = e.type == "click" && id == "send";
+
+    if( notEmpty && (isEnterKeypress || isSendClick) ) {
+        sendMsg($("#w3mission").val());
+        $("#w3mission").val(" ");
+        e.preventDefault();
+        
+    }
+}
+
+function sendMsg(msg)
+{
+   
+    $.ajax({
+      type:"post",
+      url:"{{route('frontend.sendMessage')}}",
+      data:{"_token":"{{ csrf_token() }}","message":msg},
+      success:function(data)
+      {
+          //do something with response data
+      }
+    });
+
+
+
+}
+var last_msg_id=0;
+setInterval(function()
+{ 
+    $.ajax({
+      type:"get",
+      url:"{{route('frontend.chat.get')}}",
+      data:{message_id:last_msg_id},
+      success:function(data)
+      {
+        var msgPopulated=false;
+          $(data.data).each(function(i,d){
+                if(d.msg_status=='sent' && d.id>last_msg_id)
+                {
+                     msgPopulated=true;
+                    last_msg_id=d.id;
+                    var html=`<div class="outgoing_msg">
+    <img src="{{auth()->user()->getProfileImage()}}" alt="Avatar" class="avatar"> 
+      <div class="sent_msg">
+        <p>${d.message}</p>
+        <span class="time_date"> ${d.timestamp} </span> </div>
+    </div>`;
+    
+                    $(".msg_history").append(html);
+                  
+
+                }
+                else
+                if(d.msg_status=='recieved' && d.id>last_msg_id)
+                {
+                    msgPopulated=true;
+                    last_msg_id=d.id;    
+                    var html =`<div class="incoming_msg">
+      <div class="incoming_msg_img"> <img src="http://mckay.neuronsit.in/wp-content/uploads/2020/04/employer-13-210x204-1.png" alt="Avatar" class="avatar"> </div>
+      <div class="received_msg">
+        <div class="received_withd_msg">
+          <p>${d.message}</p>
+          <span class="time_date">${d.timestamp}</span></div>
+      </div>
+    </div>`;
+                     $(".msg_history").append(html);
+                   
+
+                }
+          });
+          if(msgPopulated)
+          {
+            $(".msg_history").animate({ scrollTop:1000000}, 1000);
+          }
+      }
+    });
+}, 2000);
+
+
+
+
+    $("#send").click(appendChat);
+    $("#w3mission").keypress(appendChat);
+</script>
+@endsection
